@@ -12,6 +12,7 @@
 //array of choices for computer to select
 const moves = ["rock","paper","scissors"];
 
+
 //plays 5 iterations
 
 for (let i = 0; i < 5; i++) {
