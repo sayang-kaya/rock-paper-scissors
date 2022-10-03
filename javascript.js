@@ -14,8 +14,8 @@ const moves = ["rock","paper","scissors"];
 
 
 //plays 5 iterations
-
-for (let i = 0; i < 5; i++) {
+function game() {
+    for (let i = 0; i < 5; i++) {
         //computer randomly selects move
         function getComputerchoice() {
             let computerSelection= moves[Math.floor(Math.random() * moves.length)];
@@ -44,4 +44,6 @@ for (let i = 0; i < 5; i++) {
             
     
 
+    }
 }
+game()
