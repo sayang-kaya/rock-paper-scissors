@@ -9,34 +9,38 @@
 // if user is scissors and computer is paper then user wins
 // if user and computer is the same then it is a tie
 
+//array of choices for computer to select
 const moves = ["rock","paper","scissors"];
-let x = ""
 
-function getComputerchoice(x) {
-    let computerSelection= moves[Math.floor(Math.random() * moves.length)];
-    return computerSelection;
-}
-let computerSelection = getComputerchoice();
-console.log(computerSelection);
+//plays 5 iterations
 
-function playRound(playerSelection,computerSelection) {
-    let input = prompt("Rock, paper, scissors?");
-    let playerSelection = input.toLowerCase();
-    console.log(playerSelection);
-    if (computerSelection == playerSelection) {
-        return "It's a tie!"
-    } else if (computerSelection =="rock" && playerSelection =="scissors"|| computerSelection =="paper" && playerSelection =="rock" || computerSelection =="scissors" && playerSelection =="paper") {
-        return "Computer wins!"
-    } else if (computerSelection =="scissors" && playerSelection =="rock"|| computerSelection =="rock" && playerSelection =="paper" || computerSelection =="paper" && playerSelection =="scissors") {
-        return "Player wins!"
-    }
-}
+for (let i = 0; i < 5; i++) {
+        //computer randomly selects move
+        function getComputerchoice() {
+            let computerSelection= moves[Math.floor(Math.random() * moves.length)];
+            return computerSelection;
+        }
+        let computerSelection = getComputerchoice();
+        console.log(computerSelection);
 
-function game(){
-    for (let i = 0; i < 5; i++) {
+        //user inputs choice
+        let input = prompt("Rock, paper, scissors?");
+        let playerSelection = input.toLowerCase();
+        console.log(playerSelection);
+
+        //compares playerSelection to computerSelection
+        function playRound(playerSelection,computerSelection) {
+            if (computerSelection == playerSelection) {
+                return "It's a tie!"
+            } else if (computerSelection =="rock" && playerSelection =="scissors"|| computerSelection =="paper" && playerSelection =="rock" || computerSelection =="scissors" && playerSelection =="paper") {
+                return "Computer wins!"
+            } else if (computerSelection =="scissors" && playerSelection =="rock"|| computerSelection =="rock" && playerSelection =="paper" || computerSelection =="paper" && playerSelection =="scissors") {
+                return "Player wins!"
+            }
+        }
+        playRound();
         console.log(playRound(playerSelection, computerSelection));
+            
+    
 
-    }
 }
-
-
